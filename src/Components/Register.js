@@ -1,15 +1,5 @@
 import React, { Component } from "react";
-import {
-  Button,
-  Card,
-  CardBody,
-  Col,
-  Container,
-  Form,
-  Input,
-  InputGroup,
-  Row,
-} from "reactstrap";
+import { Button, Card, Col, Container, Form, Input, Row } from "reactstrap";
 
 class Register extends Component {
   constructor() {
@@ -29,6 +19,7 @@ class Register extends Component {
     this.City = this.City.bind(this);
     this.register = this.register.bind(this);
   }
+
   Email(event) {
     this.setState({ Email: event.target.value });
   }
@@ -62,76 +53,42 @@ class Register extends Component {
     })
       .then((Response) => Response.json())
       .then((Result) => {
-        if (Result.Status == "Success") this.props.history.push("/Dashboard");
-        else alert("Sorrrrrry !!!! Un-authenticated User !!!!!");
+        if (Result.Status === "Success") this.props.history.push("/Dashboard");
+        else alert("Sorry !!!! Unauthenticated User !!!!");
       });
   }
+
   render() {
     return (
-      <>
-        <div className="app flex-row align-items-center">
-          <Container>
-            <Row className="justify-content-center">
-              <Col md="9" lg="7" xl="6">
-                <Card className="mx-4">
-                  <CardBody className="p-4">
-                    <Form>
-                      <div class="row" className="mb-2 pageheading">
-                        <div
-                          class="col-sm-12 btn btn-primary"
-                          style={{ width: "200px" }}
-                        >
-                          Sign Up
-                        </div>
+      <div className="app flex-row align-items-center">
+        <Container>
+          <Row className="justify-content-center">
+            <Col md="9" lg="7" xl="6">
+              <Card className="mx-4">
+                <div className="p-4">
+                  <Form>
+                    <div className="row mb-2 pageheading">
+                      <div className="col-sm-12 btn btn-primary" style={{ width: "200px" }}>
+                        Sign Up
                       </div>
-                      <InputGroup className="mb-3">
-                        <Input
-                          type="text"
-                          onChange={this.EmployeeName}
-                          placeholder="Enter Employee Name"
-                        />
-                      </InputGroup>
-                      <InputGroup className="mb-3">
-                        <Input
-                          type="text"
-                          onChange={this.Email}
-                          placeholder="Enter Email"
-                        />
-                      </InputGroup>
-                      <InputGroup className="mb-3">
-                        <Input
-                          type="password"
-                          onChange={this.Password}
-                          placeholder="Enter Password"
-                        />
-                      </InputGroup>
-                      <InputGroup className="mb-4">
-                        <Input
-                          type="text"
-                          onChange={this.City}
-                          placeholder="Enter City"
-                        />
-                      </InputGroup>
-                      <InputGroup className="mb-4">
-                        {" "}
-                        <Input
-                          type="text"
-                          onChange={this.Department}
-                          placeholder="Enter Department"
-                        />
-                      </InputGroup>
-                      <Button onClick={this.register} color="success" style={{ width: "200px" }} block>
-                        Create Account
-                      </Button>
-                    </Form>
-                  </CardBody>
-                </Card>
-              </Col>
-            </Row>
-          </Container>
-        </div>
-      </>
+                    </div>
+                    <Input type="text" onChange={this.EmployeeName} placeholder="Enter Employee Name" className="mb-3" />
+                    <Input type="text" onChange={this.Email} placeholder="Enter Email" className="mb-3" />
+                    <Input type="password" onChange={this.Password} placeholder="Enter Password" className="mb-3" />
+                    <Input type="text" onChange={this.City} placeholder="Enter City" className="mb-4" />
+                    <Input type="text" onChange={this.Department} placeholder="Enter Department" className="mb-4" />
+                    <Button onClick={this.register} color="success" style={{ width: "200px" }} block>
+                      Create Account
+                    </Button>
+                  </Form>
+                </div>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     );
   }
 }
+
 export default Register;

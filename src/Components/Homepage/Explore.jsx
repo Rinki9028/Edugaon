@@ -3,12 +3,12 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
+import { Button, CardActionArea, CardActions, Grid } from "@mui/material";
 
 function Tooltip(props) {
   return (
-    <>
-      <Card sx={{ maxWidth: 345, backgroundColor:"#0000" }}>
+    <Grid item xs={12} sm={6} md={4} lg={3}>
+      <Card sx={{ maxWidth: 345, backgroundColor: "#0000" }}>
         <CardActionArea>
           {props.logo}
           <CardContent>
@@ -29,18 +29,18 @@ function Tooltip(props) {
           </Button>
         </CardActions>
       </Card>
-    </>
+    </Grid>
   );
 }
 
 export default function Explore() {
   return (
-    <>
+    <Grid container spacing={2}>
       <Tooltip
         logo="Hello"
         title="Welcome"
         details="nehvbbfv"
-        months="12 month"
+        months="12 months"
         plateform="online"
       />
       <Tooltip
@@ -48,15 +48,15 @@ export default function Explore() {
         title="Welcome"
         details="nehvbbfv"
         months="2 years"
-        plateform="ofline"
+        plateform="offline"
       />
       <Tooltip
         logo="Hello"
         title="Welcome"
         details="nehvbbfv"
-        months="1 years"
+        months="1 year"
         plateform="classroom"
       />
-    </>
+    </Grid>
   );
 }

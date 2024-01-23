@@ -1,6 +1,5 @@
-import React from 'react';
-import { useState } from 'react';
-import MenuIcon from "@mui/icons-material/Menu";
+import React, { useState } from 'react';
+import MenuIcon from '@mui/icons-material/Menu';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 function Sidebar() {
@@ -11,15 +10,15 @@ function Sidebar() {
 
   return (
     <>
-        <MenuIcon onClick={handleShow} style={{color:'white'}}></MenuIcon>
+      <MenuIcon onClick={handleShow} style={{ color: 'white' }}></MenuIcon>
 
-      <Offcanvas show={show} onHide={handleClose}>
+      <Offcanvas show={show} onHide={handleClose} placement="start">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Offcanvas</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+          Some text as a placeholder. In real life, you can have the elements
+          you have chosen, like text, images, lists, etc.
         </Offcanvas.Body>
       </Offcanvas>
     </>
