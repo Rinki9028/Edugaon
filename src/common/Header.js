@@ -32,15 +32,13 @@ function Header() {
     <>
       <Navbar expand="lg" style={{ backgroundColor: "#ff830e" }}>
         <Container fluid>
-          <Navbar.Brand to="#" className="mx-3" placement="start">
-            <Button
-              variant="link"
-              className=""
-              onClick={toggleDrawer}
-            >
-              <i className="bi bi-list text-light" />
-            </Button>
-          </Navbar.Brand>
+          <Button
+            variant="link"
+            className="text-light p-0 ms-2"
+            onClick={toggleDrawer}
+          >
+            <i className="bi bi-list text-light" />
+          </Button>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
